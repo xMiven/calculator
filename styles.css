@@ -1,0 +1,39 @@
+body {
+  height: 99vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#calculator {
+  border: 2px black solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30vh;
+}
+
+#functions {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.button {
+  width: 20%;
+}
+
+#numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.number {
+  width: 30%;
+  height: 25%;
+}
