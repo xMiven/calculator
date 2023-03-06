@@ -33,7 +33,8 @@ body {
   flex-wrap: wrap;
 }
 
-.number {
+.number,
+#intro {
   width: 30%;
   height: 25%;
 }
