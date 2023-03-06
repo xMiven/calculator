@@ -16,14 +16,37 @@ body {
   height: 30vh;
 }
 
+#displayArea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 10%;
+}
+
 #functions {
   display: flex;
   justify-content: center;
   gap: 0;
 }
 
+#buttons {
+  background-color: grey;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .button {
   width: 20%;
+}
+
+.function,
+.clear {
+  width: 20%;
+  height: 30px;
 }
 
 #numbers {
@@ -31,6 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: 80%;
 }
 
 .number,

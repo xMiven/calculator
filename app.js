@@ -2,6 +2,7 @@ const numbers = document.querySelectorAll(".number");
 const functions = document.querySelectorAll(".function");
 const intro = document.querySelector("#intro");
 const display = document.querySelector("#display");
+const history = document.querySelector("#history");
 const clearButton = document.querySelector("#clear");
 
 let a = 0;
@@ -24,7 +25,7 @@ function addEventListenerFunc(arr) {
     arr[i].addEventListener("click", (e) => {
       setValue(display);
       operation = e.target.value;
-      console.log(e.target.value);
+      history.textContent = `${a} ${operation}`;
     });
   }
 }
@@ -34,6 +35,7 @@ function addListeners(arr) {
     arr[i].addEventListener("click", (e) => {
       if (isNew) {
         clear();
+        history.textContent = "";
       }
       display.textContent += e.target.value;
     });
@@ -70,10 +72,13 @@ function setValue(display) {
   if (!isASet) {
     a = display.textContent;
     isASet = true;
+    history.textContent = a;
     clear();
   } else if (!isBSet) {
     b = display.textContent;
     isBSet = true;
+    history.textContent = `${a} ${operation} ${b} =`;
+
     clear();
   }
 }
@@ -91,19 +96,16 @@ function compute() {
     case "-": {
       display.textContent = substract(a, b);
       reset();
-
       break;
     }
     case "X": {
       display.textContent = multiply(a, b);
       reset();
-
       break;
     }
     case "/": {
       display.textContent = divide(a, b);
       reset();
-
       break;
     }
   }
